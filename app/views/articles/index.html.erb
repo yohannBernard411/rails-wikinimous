@@ -1,0 +1,11 @@
+<h1>All articles</h1>
+
+<% @articles.each do |article| %>
+  <h2><%= article.title %></h2>
+  <p><%= article.content %></p>
+  <%= link_to "voir", article_path(article) %>
+  <%= link_to "editer", edit_article_path(article) %>
+  <%= link_to "supprimer", article_path(article), method: :delete, data: {confirm: "arer you sur?"} %>
+<% end %>
+<br><hr><br>
+<%= link_to "Ajouter", new_article_path %>
